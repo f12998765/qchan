@@ -11,7 +11,7 @@ if(!defined('INDEX_RUN')) {
 <?php load_header(); ?>
 
 <!-- Main section -->
-<section id="main">
+<section id="mainh">
 <!-- Change This Section -->
 	<h1>隐私政策</h1>
 	<p>本文中所说“本网站”为您当前使用的网站，“用户”是指使用本网站提供的服务的用户。</p>

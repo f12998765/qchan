@@ -15,6 +15,10 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu {display:block;}
 
 /* Page background-color */
+html,body{
+	width: 100%;
+	height: 100%;		
+}
 body {
 	background-color: #f8f8f8;
 }
@@ -34,6 +38,7 @@ button {
 	background-color: #aaa;
 	user-select: none;
 	transition: background-color 0.1s linear;
+	cursor: pointer;
 }
 button:hover {
 	background-color: #888;
@@ -67,116 +72,52 @@ button.negative:active {
 /**********************
  *       Header       *
  **********************/
-#main_header {
-	color:white;
-	position: fixed;
+a{
+	text-decoration: none;
+	color: #666;
+}
+#header_{
+	height: 9%;
+	width: 90vw;
+	padding-left:10vw;
+	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10000;
-	height: 5rem;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 1px 0px 10px #aaa;
 }
-#main_header div {
-	float: left;
+#header_ span{
+	/*margin-left: 12vw;*/
+	height: 9vh;
+	margin-right: 3rem;
+	line-height:9vh; 
+	display: inline-block;
 }
-
-div#lang_sel {
-	float: right;
-	height: 1.5rem;
-	padding: 1.75rem;
-	text-align: center;
-}
-#lang_sel::before {
-	font-family:"iconfont";
-	content: "\e603";
-	font-size: 1.5rem;
-}
-#lang_sel span{
-	font-size: 1.5rem;
-}
-#lang_sel ul {
-	list-style: none;
-	position: absolute;
-	top: 5rem;
-	right: 0;
-	display: none;
-	background-color: dodgerblue;
-	padding: 1rem;
-	max-width: 20rem;
-}
-#lang_sel:hover {
-	background-color: dodgerblue;
-}
-#lang_sel:hover ul {
-	display: block;
-}
-#lang_sel ul li a {
-	color: white;
-	text-decoration: none;
-}
-#lang_sel ul li {
-	float: left;
-	padding: 0.5rem;
-}
-#lang_sel ul li a:hover {
-	text-decoration: underline;
-}
-
 #main {
-	padding: 1rem;
-	position: absolute;
-	top: 5rem;
-	left: 0;
-	right: 0;
-	bottom: 5rem;
-	overflow: auto;
-	transition: bottom 0.2s ease-out;
+	width: 100%;
+	height: 100%;
+	display: flex;
+    align-items: center;
+	justify-content: center;
 }
 
-#first_load {
-	color: #aaa;
-	text-align: center;
-	display: -moz-box;
-	-moz-box-pack: center;
-	-moz-box-align: center;
-	-moz-box-orient: vertical;
-	font-size: 1.5rem;
-	line-height: 120%;
-	width: 100%;
-}
-/* Big add button */
-/*#add {
-	width: 1.5rem;
-	height: 1rem;
+#mainh{
+	width: 80%;
+	height: 85vh;
+	padding-top:15vh; 
 	margin: 0 auto;
-	border: solid 0.1rem #aaa;
-	border-radius: 0.15rem;
-	font-family: "iconfont";
-	font-size: 8rem;
-	line-height: 100%;
-	display: block;
-	text-decoration: none;
-	opacity: 0.7;
-	cursor: default;
-	transition: opacity 0.1s linear;
-}*/
+}
+
 #add {
-    width: 72%;
-    height: 2rem;
-    margin: 0 auto;
-    border: dashed 3px #aaa;
-    border-radius: 10px;
-    font-family: "iconfont";
-    font-size: 8rem;
-    line-height: 100%;
+    width: 42vh;
+    height: 42vh;
     display: block;
     text-decoration: none;
-    opacity: 0.7;
-    cursor: default;
-    transition: opacity 0.1s linear;
+    opacity: 1;
+    cursor: pointer;
+	background: url("./images/outbox.svg") no-repeat;
 }
 #add:hover {
-	opacity: 1;
+	opacity: 0.8;
 }
 .compatible {
 	font-size: 0.6rem;
@@ -186,40 +127,18 @@ div#lang_sel {
 #upload_popup {
 	position: absolute;
 	top: 0;
-	bottom: -50%;
 	left: 0;
-	right: 0;
-	background-color: rgba(0,0,0,0.5);
-	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200,200,200,0.6);
 	z-index: 9999;
+	display: none;
 }
 
 #url_zone {
 	display: none;
 }
-#method_change {
-	background-color: mediumseagreen;
-}
-#method_change a {
-	display: inline-block;
-	text-align: center;
-	background-color: #f8f8f8;
-	color: #333;
-	cursor: default;
-	width: 40%;
-	margin-left: 5%;
-	padding: 1%;
-	font-size: 1.2rem;
-	line-height: 100%;
-	transition: background-color 0.1s linear;
-}
 
-#method_change a.noact {
-	background-color: #aaa;
-}
-#method_change a.noact:hover {
-	background-color: #ddd;
-}
 #file_list {
 	visibility: hidden;
 	width: 0px;
@@ -251,18 +170,29 @@ div#lang_sel {
 #main.show {
 	bottom: 13.75rem;
 }
+
+.blockt{
+	width: 100%;
+	height: 100%;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
 #pop_window {
 	margin: 1rem auto;
 	width: 38rem;
 	background-color: #f8f8f8;
+	position: relative;
 }
-#pop_window header {
-	height: 1rem;
-	background-color: mediumseagreen;
-	padding: 1rem;
-	color: white;
-	font-size: 1.5rem;
-	line-height: 100%;
+#closepop{
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	width: 3rem;
+	height: 3rem;
+	background: url("./images/closed.svg") no-repeat;
+	padding: 0;
+	cursor: pointer;
 }
 /* Work zone */
 #pop_window div.zone {
@@ -286,15 +216,17 @@ div#lang_sel {
 	height: 11.3rem;
 	}
 #file_review {
-	height: 10rem;
-	overflow: auto;
+	height: auto;
+	margin: 0.5rem 0;
 }
 #file_review p {
 	color: #666;
-	line-height: 120%;
-	padding: 0.3rem 0;
-	counter-incrrement: filecount;
-	white-space: nowrap;
+	height: 2rem;
+	text-align: left;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	padding-left: 1rem;
 }
 
 #file_review p:nth-child(2n) {
@@ -303,11 +235,7 @@ div#lang_sel {
 #file_review p:nth-child(2n+1) {
 	background-color: #eee;
 }
-#file_review p::before {
-	content: counter(filecount);
-	color: white;
-	padding:0.3rem;
-}
+
 #file_review p:nth-child(2n)::before {
 	background-color: #666;
 }
@@ -317,6 +245,10 @@ div#lang_sel {
 
 /* Result Zone */
 #result_zone {
+	margin-top:10vh; 
+	width: 100%;
+	height: 90vh;
+	display: none;
 	list-style: none;
 	background-repeat: no-repeat;
 	background-position: bottom right;
@@ -427,7 +359,7 @@ div#lang_sel {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	border: 5px solid slateblue;
+	/*border: 5px solid #7AC5CD;*/
 	display: none;
 	cursor: default;
 }
@@ -439,7 +371,7 @@ div#lang_sel {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	color: slateblue;
+	color: #7AC5CD;
 	margin: -1px;
 	text-align: right;
 	font-size: 2rem;
@@ -481,20 +413,21 @@ div#lang_sel {
 }
 
 #info_zone {
-	padding: 0.625rem;
-	height: 12.5rem;
+    height: 42%;
+    width: 90%;
+    padding: 0 5%;
 	position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	z-index: 9999;
-	background-color: slateblue;
+	background-color: #7AC5CD;
 	color: white;
-	transition: height 0.2s ease-out, padding 0.2s ease-out;
+	transition: height 0.2s ease-out, padding 0.2s ease-out;	
 }
 #info_zone h1 {
 	font-size: 2rem;
-	margin: 0.15rem 0;
+	margin: 0.5rem 0;
 }
 #info_zone p {
 	margin: 0.3rem 0;
@@ -505,6 +438,14 @@ div#lang_sel {
 	padding: 0 0.625rem;
 	height: 0;
 }
+
+.result_info label{
+    width: 32%;
+    text-align: right;
+    display: inline-block;
+    margin-right: 1rem;
+    height: 2rem;
+}
 #info_zone p.result_info input,#info_zone p.result_info textarea {
 	width: 36rem;
 	border: 2px solid #ddd;
@@ -513,27 +454,34 @@ div#lang_sel {
 	color: #666;
 	outline: none;
 	font-family: monospace;
-	text-align: right;
+	text-align: left;
 	line-height: 120%;
+	cursor: pointer;
 }
 #info_zone p.result_info input {
-	border-color: slateblue;
+	border-color: #7AC5CD;
 }
 #info_zone p.result_info textarea {
-	height: 7rem;
+	width: 50rem;
+	height: 10rem;
 	text-align: left;
 	float: left;
 	resize: none;
+	font-size: 1.5rem;
+	border: 0;
+	padding: 0;
 }
 #info_zone p.result_info label.multi {
 	display: block;
-	padding: 0.125rem;
-	padding-left: 37rem;
+	padding:0 1rem;
 	width: 18rem;
-	height: 1.2rem;
+	height: 2rem;
+	line-height: 2rem;
+	float: left;
+	cursor: pointer;
 }
 #info_zone p.result_info label.multi:hover {
-	background-color: mediumslateblue;
+	background-color: medium#7AC5CD;
 }
 #info_zone p.result_info label.multi.actived,#info_zone p.result_info label.multi.actived:hover {
 	background-color: #ddd;
@@ -543,8 +491,8 @@ div#lang_sel {
 	background-color: #eee;
 }
 #info_zone p.result_info input:focus,#info_zone p.result_info textarea:focus {
-	background-color: #f8f8f8;
-	border: 2px solid tomato;
+	background-color: #FFF;
+	/*border: 1px dashed tomato;*/
 }
 
 /*-*=*-*=*-*=*-*=*-*=*-*=*-*=*-*
@@ -634,9 +582,7 @@ div#lang_sel {
 #pop_window header {
 	display: none;
 }
-#method_change {
-	padding-top: 1rem;
-}
+
 #pop_window div.zone {
 	height: auto;
 	padding: 0;
@@ -675,9 +621,13 @@ div#lang_sel {
 }
 #file_review {
 	height: auto;
+	margin: 0.5rem 0;
 }
 #file_review p {
 	text-align: left;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1.5rem;
 }
 #result_zone {
 	text-align: center;

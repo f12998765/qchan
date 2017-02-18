@@ -1,7 +1,7 @@
 <?php
 
 // Set display language
-define('UI_LANG','en');
+define('UI_LANG','zh-CN');
 define('UI_THEME','default');
 
 // Site information
@@ -16,7 +16,7 @@ define('MAIN_SITE_LOGO', '');
 define('MAIN_SITE_URL', '');
 
 // Upload settings
-define('SIZE_LIMIT', '4M');
+define('SIZE_LIMIT', '20M');
 define('UPLOAD_DIR', 'uploads');
 define('THUMB_DIR', 'thumbs');
 define('DUPLICATE_FILE_CHECK', false); // Warning: setting to true will cause quantity of file increasing double times.

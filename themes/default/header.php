@@ -17,9 +17,9 @@ if(!defined('INDEX_RUN')) {
 	<meta name="Keywords" content="<?=SITE_KEYWORDS ?>">
 	<meta name="Description" content="<?=SITE_DESCRIPTION ?>">
 	
-	<title><?=SITE_TITLE . ' - ' . __('Qchan Image Hosting') ?></title>
+	<title>OX Image Hosting</title>
 	
-	<link rel="stylesheet" type="text/css" href="<?=get_url().theme_path() ?>style.css">
+	<link rel="stylesheet" type="text/css" href="<?=get_url().theme_path() ?>style1.css">
 	<link rel="icon" type="image/png" href="<?=get_url() ?>site-img/favicon.png">
 	
 	<script type="application/javascript">
@@ -53,15 +53,15 @@ if(!defined('INDEX_RUN')) {
 </head>
 
 <body>
-<header id="main_header">
-	<div id="logo"></div>
-	<?php if(!is_page()) { ?>
-	<div id="upload_button_wrap">
-		<button class="affirmative" id="upload_button" title="<?=__('Upload files') ?>"><span class="hide_mobile">&nbsp;<?=__('Upload') ?></span></button>
-	</div>
-	<?php } ?>
+<!--<header id="main_header">
 	<div id="lang_sel">
 		<span class="hide_mobile"><?=__('Language') ?></span>
 		<ul><?=get_langlist() ?></ul>
 	</div>
-</header>
+</header>-->
+<div id="header_">
+	<span><a href="https://ox.xizero.com">XO Image Hosting</a></span>
+	<span><a href="http://web.xizero.com">网址索引</a></span>
+	<span><a href="https://www.xizero.com">XIZERO</a></span>
+	<span><a href="https://ox.xizero.com/?page=more">关于</a></span>
+</div>

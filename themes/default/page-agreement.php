@@ -11,7 +11,7 @@ if(!defined('INDEX_RUN')) {
 <?php load_header(); ?>
 
 <!-- Main section -->
-<section id="main">
+<section id="mainh">
 <!-- Change This Section -->
 	<h1>使用条款</h1>
 	<p>本条款适用于本网站提供的图片保存和分享服务，如您不同意本条款，请立即终止使用本网站。</p>

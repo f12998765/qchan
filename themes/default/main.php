@@ -10,7 +10,7 @@ if(!defined('INDEX_RUN')) {
 
 <?php load_header(); ?>
 
-<section id="main">
+<div id="main">
 	<ul id="result_zone">
 		<?=$results!=null ? format_results($results) : '' ?>
 	</ul>
@@ -20,19 +20,14 @@ if(!$results) {
 ?>
 	<!-- Button and message in center -->
 	<div id="first_load">
-		<a id="add" title="<?=__('Upload files') ?>">&#xe600;</a>
-		<p><?=__('Upload files') ?></p>
-		<p class="hide_mobile"><?=__('Drag and drop files here') ?></p>
-		<p class="compatible hide_mobile"><?=__('Only works with IE 10+ and other mordern browser') ?></p>
+		<a id="add" title="<?=__('Upload files') ?>"></a>
 	</div>
 <?php } ?>
 
 	<div id="upload_popup">
+		<div class="blockt">
 		<div id="pop_window">
-			<header><?=__('Upload') ?></header>
 			<section>
-				<!-- Tabs -->
-				<div id="method_change"><a id="normal"><?=__('Normal') ?></a><a id="url" class="noact"><?=__('URL') ?></a></div>
 				<!-- Normal upload zone -->
 				<div id="normal_zone" class="zone">
 					<form id="normal_form" method="post" enctype="multipart/form-data">
@@ -44,20 +39,21 @@ if(!$results) {
 					<div id="file_review">
 					</div>
 				</div>
-				<!-- URL upload zone -->
+				 <!--URL upload zone 
 				<div id="url_zone" class="zone">
 					<textarea id="url_list" placeholder="<?=__('Please put URLs here, one URL per line, with leading \'http://\'') ?>"></textarea>
-				</div>
+				</div>-->
 				<!-- Submit and Close buttons -->
 				<div id="submit_zone">
-					<button id="closepop" class="negative hide_mobile" type="button"><?=__('Close') ?></button>
 					<button id="submit" class="affirmative" type="button"><?=__('Start Upload') ?></button>
 				</div>
+				<div id="closepop" class="negative hide_mobile" ></div>
 			</section>
+		</div>
 		</div>
 	</div>
 
-</section>
+</div>
 
 <!-- File info section -->
 <aside id="info_zone" class="hide">

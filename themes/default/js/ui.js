@@ -18,6 +18,11 @@ $('#upload_button,#add').on('click',function(e){
 	}
 });
 
+$("#info_zone").delegate("input","click",function(){
+	$(this).select();
+	document.execCommand("Copy");
+});
+
 // Upload popup event
 window.method = 'normal';
 
@@ -65,6 +70,7 @@ $('#closepop').on('click',function(e){
 $('#submit').on('click',function(e){
 	$('#closepop').trigger('click');
 	$('#first_load').remove();
+	$('#result_zone').show();
 	$('#submit').removeClass('show');
 	if(window.method == 'url') {
 		var urls = $('#url_list').val().split('\n');
@@ -400,9 +406,9 @@ function changeinfo() {
 	var main_zone = $('#main');
 	info_zone.html('').addClass('hide');
 	main_zone.removeClass('show');
-	
+
 	var namep = $('<h1></h1>').addClass('hide_mobile');
-	var statusp = $('<p></p>').addClass('hide_mobile');
+	var statusp = $('<span></span>').addClass('hide_mobile');
 	var infop = $('<p></p>');
 
 	if(selected.length>0) {
@@ -450,14 +456,14 @@ function changeinfo() {
 }
 
 function single_format(work) {
-	var output = '<input type="text" id="orig-'+work.qid+'" value="'+work.path+'" onfocus="this.select()" readonly><label for="orig-'+work.qid+'">'+ui_msg.info.orig+'</label><br>'+
-	'<input type="text" id="html-'+work.qid+'" value="&lt;img src=&quot;'+work.path+'&quot;&gt;" onfocus="this.select()" readonly><label for="html-'+work.qid+'">'+ui_msg.info.html+'</label><br>';
+	var output = '<label for="orig-'+work.qid+'">'+ui_msg.info.orig+'</label><input type="text" id="orig-'+work.qid+'" value="'+work.path+'" onfocus="this.select()" readonly><br>'+
+	'<label for="html-'+work.qid+'">'+ui_msg.info.html+'</label><input type="text" id="html-'+work.qid+'" value="&lt;img src=&quot;'+work.path+'&quot;&gt;" onfocus="this.select()" readonly><br>';
 	if(work.thumb != 'none') {
-		output += '<input type="text" id="htmlthm-'+work.qid+'" value="&lt;a href=&quot;'+work.path+'&quot; title=&quot;'+ui_msg.info.thumb_tips+'&quot;&gt;&lt;img src=&quot;'+work.thumb+'&quot;&gt;&lt;/a&gt;" onfocus="this.select()" readonly><label for="htmlthm-'+work.qid+'">'+ui_msg.info.html_with_thumb+'</label><br>';
+		output += '<label for="htmlthm-'+work.qid+'">'+ui_msg.info.html_with_thumb+'</label><input type="text" id="htmlthm-'+work.qid+'" value="&lt;a href=&quot;'+work.path+'&quot; title=&quot;'+ui_msg.info.thumb_tips+'&quot;&gt;&lt;img src=&quot;'+work.thumb+'&quot;&gt;&lt;/a&gt;" onfocus="this.select()" readonly><br>';
 	}
-	output += '<input type="text" id="bbc-'+work.qid+'" value="[img]'+work.path+'[/img]" onfocus="this.select()" readonly><label for="bbc-'+work.qid+'">'+ui_msg.info.bbcode+'</label><br>';
+	output += '<label for="bbc-'+work.qid+'">'+ui_msg.info.bbcode+'</label><input type="text" id="bbc-'+work.qid+'" value="[img]'+work.path+'[/img]" onfocus="this.select()" readonly><br>';
 	if(work.thumb != 'none') {
-		output += '<input type="text" id="bbcthm-'+work.qid+'" value="[url='+work.path+'][img]'+work.thumb+'[/img][/url]" onfocus="this.select()" readonly><label for="bbcthm-'+work.qid+'">'+ui_msg.info.bbcode_with_thumb+'</label>';
+		output += '<label for="bbcthm-'+work.qid+'">'+ui_msg.info.bbcode_with_thumb+'</label>'+'<input type="text" id="bbcthm-'+work.qid+'" value="[url='+work.path+'][img]'+work.thumb+'[/img][/url]" onfocus="this.select()" readonly>';
 	}
 	return output;
 }
