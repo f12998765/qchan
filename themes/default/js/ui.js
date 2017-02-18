@@ -461,7 +461,7 @@ function single_format(work) {
 	if(work.thumb != 'none') {
 		output += '<label for="htmlthm-'+work.qid+'">'+ui_msg.info.html_with_thumb+'</label><input type="text" id="htmlthm-'+work.qid+'" value="&lt;a href=&quot;'+work.path+'&quot; title=&quot;'+ui_msg.info.thumb_tips+'&quot;&gt;&lt;img src=&quot;'+work.thumb+'&quot;&gt;&lt;/a&gt;" onfocus="this.select()" readonly><br>';
 	}
-	output += '<label for="bbc-'+work.qid+'">'+ui_msg.info.bbcode+'</label><input type="text" id="bbc-'+work.qid+'" value="[img]'+work.path+'[/img]" onfocus="this.select()" readonly><br>';
+	output += '<label for="bbc-'+work.qid+'">'+ui_msg.info.bbcode+'</label><input type="text" id="bbc-'+work.qid+'" value="![]('+work.path+')" onfocus="this.select()" readonly><br>';
 	if(work.thumb != 'none') {
 		output += '<label for="bbcthm-'+work.qid+'">'+ui_msg.info.bbcode_with_thumb+'</label>'+'<input type="text" id="bbcthm-'+work.qid+'" value="[url='+work.path+'][img]'+work.thumb+'[/img][/url]" onfocus="this.select()" readonly>';
 	}
@@ -476,7 +476,7 @@ function multi_format(works,infop) {
 		work = works[i];
 		result_area.prop('t').torig += work.path + '\n';
 		result_area.prop('t').thtml += '<img src="'+work.path+'">' + '\n';
-		result_area.prop('t').tbbcode += '[img]'+work.path+'[/img]' + '\n';
+		result_area.prop('t').tbbcode += '![]('+work.path+')' + '\n';
 		if(work.thumb!='none') {
 			result_area.prop('t').thtmlthm += '<a href="'+work.path+'" title="'+ui_msg.info.thumb_tips+'"><img src="'+work.thumb+'"></a>' + '\n';
 			result_area.prop('t').tbbcodethm += '[url='+work.path+'][img]'+work.thumb+'[/img][/url]' + '\n';
