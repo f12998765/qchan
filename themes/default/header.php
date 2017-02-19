@@ -61,7 +61,11 @@ if(!defined('INDEX_RUN')) {
 </header>-->
 <div id="header_">
 	<span><a href="https://ox.xizero.com">XO Image Hosting</a></span>
-	<span><a href="http://web.xizero.com">网址索引</a></span>
-	<span><a href="https://www.xizero.com">XIZERO</a></span>
+	<span class="hide_"><a href="http://web.xizero.com">网址索引</a></span>
+	<span class="hide_"><a href="https://www.xizero.com">XIZERO</a></span>
 	<span><a href="https://ox.xizero.com/?page=more">关于</a></span>
+</div>
+
+<div id="phone">
+	<div>不支持手机上传</div>
 </div>

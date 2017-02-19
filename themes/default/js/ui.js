@@ -100,6 +100,7 @@ $(document).on('dragenter', function(e) {
 	e.preventDefault();
 	$('#closepop').trigger('click');
 	$('#first_load').remove();
+	$('#result_zone').show();
 	var files = e.dataTransfer.files;
 	if(qchan().isSupport) {
 		qchan().file_upload(files);
@@ -109,7 +110,7 @@ $(document).on('dragenter', function(e) {
 });
 
 $('#result_zone').on('drop', thm_drop);
-
+	
 });
 
 function thm_dragstart(e){
